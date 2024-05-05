@@ -3,7 +3,7 @@
 import Button from '@/components/ui/Button'
 import { FC, useState } from 'react'
 import { signIn } from 'next-auth/react'
-import { toast } from 'react-hot-toast'
+
 
 const Page: FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false)
@@ -14,7 +14,7 @@ const Page: FC = () => {
       await signIn('google')
     } catch (error) {
       // display error message to user
-      toast.error('Something went wrong with your login.')
+      alert('Something went wrong with your login.')
     } finally {
       setIsLoading(false)
     }
